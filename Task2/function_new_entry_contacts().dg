@@ -1,0 +1,21 @@
+//Function:
+//String function_new_entry_contacts()
+datalist = List();
+newContact = Map();
+newContact.put("First_Name", "TestFirstName");
+newContact.put("Last_Name", "TestLastName");
+newContact.put("Email", "testname@email.com");
+newContact.put("Phone", "test");
+newContact.put("Company", "testNameCompany");
+datalist.add(newContact);
+datamap = Map();
+datamap.put("data",datalist);
+apiNewContactEntry = invokeurl
+[
+url :"https://www.zohoapis.eu/crm/v2/Contacts"
+type : POST
+parameters:datamap.toString()
+connection:"zohocrmmodules"
+];
+info apiNewContactEntry;
+return "New contact successfully added.";

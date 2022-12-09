@@ -1,0 +1,31 @@
+//Function:
+//String function_new_entry_deal_from_contact()
+apiGetContactEntry = invokeurl
+[
+	url :"https://www.zohoapis.eu/crm/v2/Contacts/536956000000338258"
+	type : GET
+	connection:"zohocrmmodules"
+];
+info apiGetContactEntry;
+
+datalist = List();
+newDeal = Map();
+newDeal.put("Deal_Name","TestDealName");
+newDeal.put("Account_Name","TestAccountName");
+newDeal.put("Closing_Date","2022-10-10");
+newDeal.put("Stage","Closed Won");
+newDeal.put("Contact_Name", 536956000000338258);
+datalist.add(newDeal);
+datamap = Map();
+datamap.put("data",datalist);
+
+apiNewDealEntry = invokeurl
+[
+	url :"https://www.zohoapis.eu/crm/v2/Deals"
+	type : POST
+	parameters:datamap.toString()
+	connection: "zohocrmmodulesdc"
+];
+info apiNewDealEntry;
+
+return "New deal successfully added.";

@@ -1,0 +1,10 @@
+//Function:
+//String function_connection_crm_api()
+apiCall = invokeurl
+[
+	url :"https://www.zohoapis.eu/crm/v3/settings/modules"
+	type : GET
+	connection:"zohocrmapi"
+];
+info apiCall;
+return "Connection to API CRM successfully done";

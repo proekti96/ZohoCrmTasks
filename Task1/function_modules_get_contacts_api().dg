@@ -1,0 +1,10 @@
+//Function:
+//String function_modules_get_contacts_api()
+apiModulesContactsCall = invokeurl
+[
+	url: "https://www.zohoapis.eu/crm/v2/Contacts"
+	type: GET
+	connection: "zohocrmmodules"
+];
+info apiModulesContactsCall;
+return "Connection to Contacts Modules successfully done";
